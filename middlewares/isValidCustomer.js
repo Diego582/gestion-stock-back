@@ -9,8 +9,5 @@ export default async (req, res, next) => {
     req.isValidCustomer = false;
   }
 
-  console.log(one, "valor buscado");
-  console.log(req.isValidCustomer, "req.isValidCustomer");
-
   return next();
 };
