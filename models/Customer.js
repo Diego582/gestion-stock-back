@@ -5,7 +5,8 @@ let collection = "customer";
 let schema = new Schema(
   {
     name: { type: String, required: true },
-    lastname: { type: String, required: true },
+    lastName: { type: String, required: true },
+    dni: { type: String, required: true },
     cuit: { type: String, required: true },
     condition: { type: String, required: true },
     address: { type: String, required: true },
