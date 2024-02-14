@@ -5,7 +5,7 @@ export default async (req, res, next) => {
     if (req.isValidCustomer) {
       return res.status(409).json({
         success: false,
-        message: "duplicate client",
+        message: "duplicate client - " + req.body.dni,
         response: null,
       });
     }
@@ -14,7 +14,7 @@ export default async (req, res, next) => {
     return res.status(201).json({
       success: true,
       message: "Client created",
-      response: newCustomer._id,
+      response: newCustomer,
     });
   } catch (error) {
     return next(error);
