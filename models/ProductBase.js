@@ -4,7 +4,7 @@ let collection = "productBase";
 
 let schema = new Schema(
   {
-    codigoBarras: { type: Number, required: true },
+    codigoBarras: { type: String, required: true },
     descripcion: { type: String, required: true },
     categoria: { type: String, required: true },
   },
