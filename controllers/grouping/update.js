@@ -1,17 +1,17 @@
-import Agrupamiento from "../../models/Agrupamiento.js";
+import Grouping from "../../models/Grouping.js";
 
 export default async (req, res, next) => {
   try {
-    let updatedAgrupamiento = await Agrupamiento.findByIdAndUpdate(
+    let updatedGrouping = await Grouping.findByIdAndUpdate(
       req.params._id,
       req.body,
       { new: true }
     ).select();
-    if (updatedAgrupamiento) {
+    if (updatedGrouping) {
       return res.status(200).json({
         success: true,
-        message: "Agrupamiento updated",
-        response: updatedAgrupamiento,
+        message: "Grouping updated",
+        response: updatedGrouping,
       });
     } else {
       return res.status(400).json({
