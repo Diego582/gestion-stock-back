@@ -1,4 +1,4 @@
-import Agrupamiento from "../../models/Agrupamiento.js";
+import Grouping from "../../models/Grouping.js";
 
 
 
@@ -9,15 +9,15 @@ export default async (req, res, next) => {
     /* if (req.query.lastName) {
       queries.lastName = new RegExp(req.query.lastName, "i");
     } */
-    const allAgrupamiento = await Agrupamiento.find(
+    const allGrouping = await Grouping.find(
       queries,
       "-__v -createdAt -updatedAt"
     ).select("");
 
     return res.status(200).json({
       success: true,
-      message: "Agrupamientos found",
-      response: allAgrupamiento,
+      message: "Groupings found",
+      response: allGrouping,
     });
   } catch (error) {
     next(error);

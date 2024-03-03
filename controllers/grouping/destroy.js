@@ -1,16 +1,16 @@
-import Agrupamiento from "../../models/Agrupamiento.js";
+import Grouping from "../../models/Grouping.js";
 
 export default async (req, res, next) => {
   try {
-    let deletedAgrupamiento = await Agrupamiento.findByIdAndDelete(
+    let deletedGrouping = await Grouping.findByIdAndDelete(
       req.params.id
     );
 
-    if (deletedAgrupamiento) {
+    if (deletedGrouping) {
       return res.status(200).json({
         success: true,
-        message: "Agrupamiento deleted",
-        response: deletedAgrupamiento._id,
+        message: "Grouping deleted",
+        response: deletedGrouping._id,
       });
     } else {
       return res.status(400).json({

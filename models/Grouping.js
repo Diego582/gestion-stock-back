@@ -1,6 +1,6 @@
 import { model, Schema, Types } from "mongoose";
 
-let collection = "agrupamiento";
+let collection = "grouping";
 
 let schema = new Schema(
   {
