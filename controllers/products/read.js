@@ -1,12 +1,11 @@
 import Product from "../../models/Product.js";
 
-
 export default async (req, res, next) => {
   try {
     let queries = {};
-    /* if (req.query.lastName) {
-      queries.lastName = new RegExp(req.query.lastName, "i");
-    } */
+    if (req.query.descripcion) {
+      queries.descripcion = new RegExp(req.query.descripcion, "i");
+    }
     const allProduct = await Product.find(
       queries,
       "-__v -createdAt -updatedAt"
