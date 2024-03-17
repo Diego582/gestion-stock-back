@@ -6,6 +6,10 @@ export default async (req, res, next) => {
     if (req.query.codigoBarras) {
       queries.codigoBarras = new RegExp(req.query.codigoBarras, "i");
     }
+    const productGenerico = {
+      descripcion: 'Producto No cargado',
+      categoria: "Sin Categoria"
+    }
     const productBase = await ProductBase.findOne(
       {
         codigoBarras: req.query.codigoBarras,
