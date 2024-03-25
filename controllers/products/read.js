@@ -9,8 +9,7 @@ export default async (req, res, next) => {
     const allProduct = await Product.find(
       queries,
       "-__v -createdAt -updatedAt"
-    ).select("");
-
+    ).select("").populate("prices", "value currency -_id");
     return res.status(200).json({
       success: true,
       message: "Products found",

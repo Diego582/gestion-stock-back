@@ -1,10 +1,11 @@
-import { model, Schema, Types } from "mongoose";
+import { model, Schema } from "mongoose";
 
-let collection = "price";
+let collection = "prices";
 
 let schema = new Schema(
     {
-        price: { type: Number, required: true },
+        value: { type: Number, required: true },
+        currency: { type: String, required: true }
     },
     { timestamps: true }
 );
