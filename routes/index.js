@@ -6,6 +6,7 @@ import productsRouter from "./products.js";
 import uploadRouter from "./upload.js";
 import groupingsRouter from "./groupings.js";
 import productsBaseRouter from "./productsBase.js";
+import pricesRouter from "./prices.js"
 
 const router = express.Router();
 
@@ -16,5 +17,7 @@ router.use("/products", productsRouter);
 router.use("/upload", uploadRouter);
 router.use("/groupings", groupingsRouter);
 router.use("/productsbase", productsBaseRouter);
+router.use("/prices", pricesRouter);
+
 
 export default router;
