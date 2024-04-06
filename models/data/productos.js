@@ -13,14 +13,14 @@ async function createProduct(arrayProducts) {
 
       if (!productBase) {
         await ProductBase.create(product);
-        console.log("cargo producto", product);
+
       }
 
       if (productBase && productBase.length > 0) {
-        console.log("producto ya estaba cargado", productBase);
+
       }
     }
-    console.log("Done!");
+
   } catch (error) {
     console.log(error);
   }

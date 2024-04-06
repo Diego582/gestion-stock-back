@@ -3,7 +3,7 @@ import create from "../controllers/prices/create.js";
 import destroy from "../controllers/prices/destroy.js";
 import read from "../controllers/prices/read.js";
 import readOne from "../controllers/prices/readOne.js";
-import update from "../controllers/prices/destroy.js";
+import update from "../controllers/prices/update.js";
 
 
 const router = express.Router();
