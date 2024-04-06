@@ -1,17 +1,26 @@
 import Price from "../../models/Price.js";
+import Product from "../../models/Product.js";
+
 
 export default async (req, res, next) => {
   try {
+    const { currency, value, id } = req.body
     let updatePrice = await Price.findByIdAndUpdate(
-      req.params._id,
-      req.body,
+      req.params.id,
+      { currency, value },
       { new: true }
     ).select();
-    if (updatePrice) {
+
+
+    let oneProduct = await Product.findOne({ _id: id }).select().populate("prices", "value currency _id");;
+
+
+    if (oneProduct) {
+
       return res.status(200).json({
         success: true,
         message: "Price updated",
-        response: updatePrice,
+        response: oneProduct,
       });
     } else {
       return res.status(400).json({
@@ -21,6 +30,7 @@ export default async (req, res, next) => {
       });
     }
   } catch (error) {
+    console.log(error)
     next(error);
   }
 };

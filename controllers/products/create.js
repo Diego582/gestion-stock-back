@@ -14,14 +14,14 @@ export default async (req, res, next) => {
     let newProduct = await Product.create(req.body)
 
     let productSend = await Product.findOne({ _id: newProduct._id }).select().populate("prices", "value currency _id");
-    console.log(productSend, 'productSend')
+
     return res.status(201).json({
       success: true,
       message: "Client created",
       response: productSend,
     });
   } catch (error) {
-    console.log(error)
+
     return next(error);
   }
 };
