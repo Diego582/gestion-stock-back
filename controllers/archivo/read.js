@@ -8,7 +8,7 @@ export default async (req, res, next) => {
   // Crear una nueva instancia de ExcelJS Workbook
   const workbook = new ExcelJS.Workbook();
   try {
-    console.log("ingreso a lectura");
+  
     // Leer el archivo Excel
     await workbook.xlsx.readFile(filePath);
 
