@@ -13,7 +13,7 @@ router.post("/", create);
 
 //READ
 router.get("/", read);
-router.get("/:id", readOne);
+router.get("/last/", readOne);
 
 //UPDATE
 router.put("/:id", update);

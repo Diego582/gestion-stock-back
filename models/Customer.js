@@ -1,6 +1,6 @@
 import { model, Schema, Types } from "mongoose";
 
-let collection = "customer";
+let collection = "customers";
 
 let schema = new Schema(
   {
