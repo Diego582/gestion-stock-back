@@ -7,7 +7,9 @@ let schema = new Schema(
         puntoSales: { type: Number, required: true },
         comprobante: { type: Number, required: true },
         fecha: { type: String, required: true },
-        products: [{ type: Types.ObjectId, ref: 'productSales' }]
+        products: [{ type: Types.ObjectId, ref: 'productSales' }],
+        client_id: { type: Types.ObjectId, ref: 'customers', required: true }
+
     },
     { timestamps: true }
 );

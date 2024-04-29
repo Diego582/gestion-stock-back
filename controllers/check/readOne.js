@@ -2,7 +2,11 @@ import Check from "../../models/Check.js";
 
 export default async (req, res, next) => {
   try {
-    let oneCheck = await Check.findOne({ _id: req.params._id }).select();
+
+    let oneCheck = await Check.findOne({}, { sort: { createdAt: -1 } }).select();
+
+    console.log(oneCheck, 'onecheck')
+
     return res.status(200).json({
       success: true,
       message: "Check found",
