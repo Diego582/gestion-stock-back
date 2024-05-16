@@ -4,12 +4,13 @@ import destroy from "../controllers/productSale/destroy.js";
 import read from "../controllers/productSale/read.js";
 import readOne from "../controllers/productSale/readOne.js";
 import update from "../controllers/productSale/destroy.js";
+import isValidProductSale from "../middlewares/isValidProductSale.js";
 
 
 const router = express.Router();
 
 /* GET users listing. */
-router.post("/", create);
+router.post("/", isValidProductSale, create);
 
 //READ
 router.get("/", read);
