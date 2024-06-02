@@ -3,7 +3,7 @@ import Check from "../../models/Check.js";
 export default async (req, res, next) => {
   try {
 
-    let oneCheck = await Check.findOne({}, { sort: { createdAt: -1 } }).select();
+    let oneCheck = await Check.findOne({}, { sort: { createdAt: -1 } })
 
     console.log(oneCheck, 'onecheck')
 
