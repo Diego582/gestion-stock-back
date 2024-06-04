@@ -22,7 +22,7 @@ async function createProduct(arrayProducts) {
     }
 
   } catch (error) {
-    console.log(error);
+ 
   }
 }
 

@@ -13,7 +13,7 @@ export default async (req, res, next) => {
       newProduct.descripcion = descripcion
       newProduct._id = newProductSale._id
       delete newProduct.id_product
-      console.log(newProduct, 'newProduct ')
+      
     }
 
 
