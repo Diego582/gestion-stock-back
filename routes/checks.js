@@ -2,8 +2,9 @@ import express from "express";
 import create from "../controllers/check/create.js";
 import destroy from "../controllers/check/destroy.js";
 import read from "../controllers/check/read.js";
-import readOne from "../controllers/check/readOne.js";
+import readLast from "../controllers/check/readLast.js";
 import update from "../controllers/check/destroy.js";
+import readOne from "../controllers/check/readOne.js";
 
 
 const router = express.Router();
@@ -13,7 +14,12 @@ router.post("/", create);
 
 //READ
 router.get("/", read);
-router.get("/last", readOne);
+router.get("/last", readLast);
+
+
+//READ ONE
+router.get("/:_id", readOne);
+
 
 //UPDATE
 router.put("/:id", update);
